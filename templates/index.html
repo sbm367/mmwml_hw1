@@ -7,25 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
-    <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
-    
+    <!--<link rel="stylesheet" href="templates/style.css">-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <!-- Load the latest version of TensorFlow.js -->
     <script src="https://unpkg.com/@tensorflow/tfjs"></script>
     <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
-    
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
   </head>  
   <body>
     <h1>Hi there!</h1>
     
-   <div id="console"></div>
-    <!-- Add an image that we will use to test -->
-    <img id="img" crossOrigin src="https://i.imgur.com/JlUvsxa.jpg" width=227 height=227/>
-    <!-- Load index.js after the content of the page -->
-    <script src="index.js"></script>
+    <div id="console"></div>
+   
+    <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
+   
+    <button id="class-a">Up</button>
+    <button id="class-b">Down</button>
+    <button id="class-c">Left</button>
+	<button id="class-d">Right</button>
+	<button id="class-e">No Action</button>
 
-    
+    <!-- Load index.js after the content of the page -->
+    <script src="static/index.js"></script>
+   
   </body>
 </html>
